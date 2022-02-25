@@ -7,6 +7,9 @@ const form = document.querySelector("#todoForm");
 const addButton = document.querySelector(".addButton");
 const todoInputName = document.querySelector("#todoName");
 const todoInputDate = document.querySelector("#todoDate");
+const selectDate = document.querySelector("#selectDate")
+
+
 
 
 // Add ToDo
@@ -35,6 +38,7 @@ form.addEventListener("submit", e => {
     printTodo(todosArr);
     todoInputName.value = "";
     todoInputDate.value = "";
+    printSelectDate(todosArr, selectDate)
 }) 
 
 
@@ -67,18 +71,18 @@ function printTodo(array) {
          editBtn.textContent = "Edit";
          editBtn.classList.add('btn', 'editBtn')
        
-    
          if(isCompleted) {
              li.classList.add("line-through");
-         }
-    
-         li.addEventListener("click", todoComplete);
-         deleteBtn.addEventListener("click", deleteTodo);
-         editBtn.addEventListener("click", editTodo);
-      })
+            }
+            
+            li.addEventListener("click", todoComplete);
+            deleteBtn.addEventListener("click", deleteTodo);
+            editBtn.addEventListener("click", editTodo);
+        })
     } else {
         noText()
     }
+    printSelectDate(array, selectDate)
  
 }
 
@@ -94,6 +98,7 @@ function deleteTodo(e) {
         todosArr = [...filteredArr];
         printTodo(todosArr);
         localStorage.setItem("storageTodos", JSON.stringify(todosArr));
+        // printSelectDate(todosArr, selectDate)
     }
 }
 
@@ -115,6 +120,7 @@ function editTodo(e) {
   todoCard = findTodo(id, todosArr)
   todoInputName.value = todoCard.todoName;
   todoInputDate.value = todoCard.todoDate;
+//   printSelectDate(todosArr, selectDate);
 }
 
 
@@ -127,7 +133,8 @@ function findTodo(id, arr) {
 
 
 // Getting Todos from storage on load
-window.addEventListener("load", (e) => {  
+window.addEventListener("load", (e) => { 
+    
     const todosFromStorage = localStorage.getItem("storageTodos")
     if(todosFromStorage) {
         const newTodosFromStorage = JSON.parse(todosFromStorage)
@@ -140,6 +147,29 @@ window.addEventListener("load", (e) => {
     }  else { 
         noText()
     }
+    printSelectDate(todosArr, selectDate)
+    
+
+})
+
+// Getting date to select tag
+function printSelectDate(arr, select){
+    select.innerHTML = "";
+    if(arr.length) {
+        arr.forEach(({todoDate}) => {
+            select.innerHTML += `
+            <option value=${todoDate}>${todoDate}</option>`
+        })
+    } 
+}
+// Filter by dates
+function filterByDate(arr, date){
+    const filteredArrByDate = arr.filter(el => el.todoDate === date)
+    console.log(filteredArrByDate);
+    printTodo(filteredArrByDate)
+}
+selectDate.addEventListener("change",function() {
+    filterByDate(todosArr, this.value)
 })
 
 // printing text if the list is empty
