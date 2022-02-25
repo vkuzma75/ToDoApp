@@ -113,8 +113,8 @@ h1 {
     padding:0.7rem 0.5rem;
     border-left:0.7rem solid var(--darkGreen);
     border-right: 2px solid var(--darkGreen);
-    border-bottom-left-radius: .2rem;
-    border-top-left-radius: .2rem;
+    /* border-bottom-left-radius: .2rem;
+    border-top-left-radius: .2rem; */
 }
 
 .liTodo:hover {

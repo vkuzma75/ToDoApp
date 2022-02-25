@@ -114,6 +114,7 @@ function editTodo(e) {
   addButton.innerText = "Update Todo";
   todoCard = findTodo(id, todosArr)
   todoInputName.value = todoCard.todoName;
+  todoInputDate.value = todoCard.todoDate;
 }
 
 
