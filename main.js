@@ -1,6 +1,6 @@
 let todosArr = [];
 let editingMode = false;
-
+let radioBtns = document.querySelectorAll(".radioButtons > input")
 
 // Form variables
 const form = document.querySelector("#todoForm");
@@ -165,7 +165,6 @@ function printSelectDate(arr, select){
 // Filter by dates
 function filterByDate(arr, date){
     const filteredArrByDate = arr.filter(el => el.todoDate === date)
-    console.log(filteredArrByDate);
     printTodo(filteredArrByDate)
 }
 selectDate.addEventListener("change",function() {
@@ -189,3 +188,24 @@ searchInput.addEventListener("keyup", (e) => {
     let filteredSearchArr = todosArr.filter(el => el.todoName.toLowerCase().includes(query))
     printTodo(filteredSearchArr);
 })
+
+// Radio buttons filtering
+
+radioBtns.forEach(btn => {
+    btn.addEventListener("change" , function(){
+        filteringRadio(this.value)
+    })
+})
+
+function filteringRadio(value) {
+    //all, active, completed
+    if(value === "all"){
+        printTodo(todosArr)
+    } else if(value === "complete"){
+        const completedFiltered = todosArr.filter(el => el.isCompleted)
+        printTodo(completedFiltered)
+    } else {
+        const activeFiltered = todosArr.filter(el => !el.isCompleted)
+        printTodo(activeFiltered)
+    }
+}

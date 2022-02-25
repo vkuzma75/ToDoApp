@@ -4,13 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css"
-      integrity="sha512-8Vtie9oRR62i7vkmVUISvuwOeipGv8Jd+Sur/ORKDD5JiLgTGeBSkI3ISOhc730VGvA5VVQPwKIKlmi+zMZ71w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="style.css" />
     <title>ToDo App</title>
   </head>
@@ -25,16 +18,16 @@
         </form>
         <ul class="todoList"></ul>
         <div class="searchContainer">
-            
-            <input type="search" id="searchTodo" placeholder="Search todo">
-            <input id="all" type="radio" name="all" value="all">
+          <input type="search" id="searchTodo" placeholder="Search todo" />
+          <div class="radioButtons">
+            <input id="all" type="radio" name="radio" value="all" />
             <label for="all">All</label>
-            <input id="active" type="radio" name="active" value="active">
+            <input id="active" type="radio" name="radio" value="active" />
             <label for="active">Active</label>
-            <input id="complete" type="radio" name="complete" value="complete">
+            <input id="complete" type="radio" name="radio" value="complete" />
             <label for="complete">Complete</label>
-            <select id="selectDate"></select>
-         
+          </div>
+          <input type="date" id="selectDate" />
         </div>
       </div>
     </div>
