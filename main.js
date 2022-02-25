@@ -166,6 +166,9 @@ function printSelectDate(arr, select){
 function filterByDate(arr, date){
     const filteredArrByDate = arr.filter(el => el.todoDate === date)
     printTodo(filteredArrByDate)
+    if(!filteredArrByDate.length){
+        noText()
+    }
 }
 selectDate.addEventListener("change",function() {
     filterByDate(todosArr, this.value)
