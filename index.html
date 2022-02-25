@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css"
+      integrity="sha512-8Vtie9oRR62i7vkmVUISvuwOeipGv8Jd+Sur/ORKDD5JiLgTGeBSkI3ISOhc730VGvA5VVQPwKIKlmi+zMZ71w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ToDo App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ToDo List</h1>
+      <div class="todoWrapper">
+        <form id="todoForm">
+          <input id="todoName" type="text" placeholder="New ToDo" />
+          <input id="todoDate" type="date" placeholder="select date" />
+          <button class="addButton btn">Add ToDo</button>
+        </form>
+        <ul class="todoList"></ul>
+        <div class="searchContainer">
+            
+            <input type="search" id="searchTodo" placeholder="Search todo">
+            <select id="selectDate"></select>
+         
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Color Variables */
+
+:root {
+   --lightGreen: #e6f1de;
+   --lightBlue: #219F94;
+   --btnHoverColor: #92cf67;
+   --darkGreen: #05351e;
+   --editBtnColor: #ffff73;
+   --editBtnHover: #cfcf55;
+   --deleteBtnColor: tomato;
+   --deleteBtnHover: rgb(230, 68, 40);
+}
+
+/* Main Containers */
+
+h1 {
+    font-size:3.5rem;
+    color:var(--lightBlue);
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: var(--lightGreen);
+}
+
+.todoWrapper {
+    padding:1rem;
+    width:50%;
+}
+
+/* Form Styling */
+
+#todoForm {
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 2px solid var(--darkGreen);
+    background-color: var(--lightBlue);
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+#todoName, 
+#todoDate,
+#searchTodo {
+    padding: .4rem;
+    border-radius: .2rem;
+    border: none;
+}
+#searchTodo{
+    margin-left: .5rem;
+}
+#selectDate{
+    margin-right: .5rem;
+}
+/* Button Styles */
+.btn{
+    padding:.4rem .6rem;
+    border-radius: .2rem;
+    cursor: pointer;   
+    border: 1px solid var(--darkGreen) ;
+}
+.addButton {
+    background-color: var(--lightGreen);
+}
+
+.addButton:hover {
+    background-color: var(--btnHoverColor);
+    transition: .3s ease-in-out;
+}
+
+.editBtn{
+    background-color: var(--editBtnColor);
+    margin-right: .3rem;
+}
+.editBtn:hover{
+    background-color: var(--editBtnHover);
+    transition: .3s ease-in-out;
+}
+.deleteBtn{
+    background-color: var(--deleteBtnColor);
+    margin-right: .5rem;
+    color: #ffff;
+}
+.deleteBtn:hover{
+    background-color: var(--deleteBtnHover);
+    transition: .3s ease-in-out;
+}
+
+/* Todos Styling */
+
+.liTodo {
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    background-color: var(--lightBlue);
+    margin-top:0.3rem;
+    padding:0.7rem 0.5rem;
+    border-left:0.7rem solid var(--darkGreen);
+    border-right: 2px solid var(--darkGreen);
+    border-bottom-left-radius: .2rem;
+    border-top-left-radius: .2rem;
+}
+
+.liTodo:hover {
+    transform: scale(1.01);
+    transition: .3s ease-in-out;
+}
+
+.actionWrapper {
+    display:flex;
+}
+
+.todoText {
+    color:white;
+}
+
+.no-todos {
+    background-color: var(--lightBlue);
+    color:white;
+    text-align: center;
+    margin-top: .3rem;
+    padding: 1rem 0;
+}
+
+/* Completed class */
+
+.line-through {
+    text-decoration: line-through;
+}
+
+/* Search part */
+
+.searchContainer {
+    display:flex;
+    justify-content: space-between;
+    margin-top: .3rem;
+    padding:1.5rem .5rem;
+    background-color: var(--lightBlue);
+    border: 2px solid var(--darkGreen);
+    border-bottom-left-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+}
+
+
